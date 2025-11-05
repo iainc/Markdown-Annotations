@@ -1,5 +1,5 @@
 ---
-Version: 0.1
+Version: 0.2
 ---
 
 # Markdown Annotations
@@ -56,7 +56,7 @@ A complete annotation block must begin with a hash annotation, which is used to 
 
 - a character range, followed by one or more spaces
 - the name of the hashing algorithm which must be `SHA-256`, followed by one or more spaces
-- followed by a hash of UTF-8 data of characters specified by the character ranges, optionally truncated to anywhere from 32 characters to the full 64 characters
+- followed by a hash of UTF-8 data of characters specified by the character ranges, optionally truncated to anywhere from 20 characters to the full 64 characters
 
 The hash annotation character range should contain the  range of the entire text. The hash annotation character range must, at the very least, include all annotated character ranges. This allows tools that do not support annotations to append text at the end.
 
@@ -72,8 +72,9 @@ When the hash annotation is omitted or invalid, tools that support annotations s
 
 Author annotation keys consist of:
 
-- `@` for human authors
-- `&` for other authors
+- `@` for human contributions
+- `&` for AI-generated text
+- `*` for reference material
 - optionally followed by one or more spaces
 - optionally followed by author name
 - optionally followed by author identifier
@@ -107,8 +108,8 @@ Author annotations that do not contain any content are considered to be authorsh
 We’re planning to introduce several types of author annotations in the future. We have clear vision for these upcoming author annotation types, and we will update the spec as they become available.
 
 ---
-Annotations: 0,6310 SHA-256 0650af9e723d7401b1a63e81582eb7bd  
-@Anton Sotkov: 15 20,107 128,186 490,642 1319 1562,632 2197,29 2227,18 2267,356 2624,15 2680,19 2705,21 2732,14 2752,4 2764,2846 5611,699  
+Annotations: 0,6349 SHA-256 b87e11a942cef68aaae6  
+@Anton Sotkov: 15 20,107 128,186 490,642 1319 1562,632 2197,29 2227,18 2267,356 2624,15 2680,19 2705,21 2732,14 2752,4 2764,2885 5650,699  
 @Oliver Reichenstein: 314,176  
-@Iain Humm: 2194,3 2226 2245,22 2623 2639,40 2699,6 2726,6 2746,6 2756,8 5610  
+@Iain Humm: 2194,3 2226 2245,22 2623 2639,40 2699,6 2726,6 2746,6 2756,8 5649  
 ...
